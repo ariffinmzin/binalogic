@@ -809,3 +809,16 @@ ul.cont li {
      width: 100%;
 }
 
+.about-list {
+     list-style-type: disc; /* Ensures bullets are visible */
+     margin: 20px 0; /* Adds space around the list */
+     padding-left: 40px; /* Indents the list */
+     color: #292e39; /* Sets text color */
+     font-size: 16px; /* Adjusts font size */
+     line-height: 1.8; /* Improves readability */
+ }
+ 
+ .about-list li {
+     margin-bottom: 10px; /* Adds spacing between list items */
+     font-weight: 500; /* Makes text slightly bold */
+ }

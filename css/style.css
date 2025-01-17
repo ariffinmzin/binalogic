@@ -822,3 +822,27 @@ ul.cont li {
      margin-bottom: 10px; /* Adds spacing between list items */
      font-weight: 500; /* Makes text slightly bold */
  }
+
+/* Logo container styles */
+.logo {
+     display: flex; /* Centers the logo horizontally */
+     /* justify-content: center;
+     align-items: center; */
+     height: auto;
+     max-width: 100%;
+ }
+ 
+ /* Logo image styles */
+ .logo img {
+     max-width: 100%; /* Ensures the logo scales down on smaller screens */
+     height: auto; /* Maintains aspect ratio */
+ }
+ 
+ /* Media queries for finer control */
+ 
+ @media (max-width: 575px) {
+     .logo img {
+         max-width: 50%; /* Further adjusts the logo size for smaller screens */
+         /* height: auto; */
+     }
+ } 

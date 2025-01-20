@@ -257,19 +257,22 @@
                   </div>
                </div>
                <div class="col-md-6 offset-md-3">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" action="https://formspree.io/f/mjkknyjq" method="POST">
                      <div class="row">
                         <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
+                           <input class="contactus" placeholder="First Name" type="text" name="first_name" required> 
+                        </div>
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Last Name" type="text" name="last_name" required> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number"> 
+                           <input class="contactus" placeholder="Mobile Phone Number" type="tel" name="phone_number" pattern="01[0-9]-[0-9]{7,8}" required> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                           <input class="contactus" placeholder="Email" type="email" name="email" required>                          
                         </div>
                         <div class="col-md-12">
-                           <textarea class="contactus" placeholder="Message" type="type" Message="Name">Message </textarea>
+                           <textarea class="contactus" placeholder="Message" name="message" required></textarea>
                         </div>
                         <div class="col-sm-12">
                            <button class="send_btn" type="button" onclick="submitForm()">Send</button>
@@ -337,7 +340,13 @@
 
       <script>
          function submitForm() {
-            alert("Thank you for your message! We will get back to you shortly.");
+            const form = document.getElementById("request");
+            if (form.checkValidity()) {
+               form.submit();
+               alert("Thank you for your message! We will get back to you shortly.");
+            } else {
+               form.reportValidity(); // Highlights invalid fields
+            }
          }
       </script>
    </body>
